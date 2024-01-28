@@ -32,6 +32,7 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -47,8 +48,6 @@
                     <executable>java</executable>
                     <arguments>
                         <argument>-classpath</argument>
-                        <!-- automatically creates the classpath using all project dependencies,
-                            also adding the project build directory -->
                         <classpath/>
                         <argument>JavalinApp</argument>
                     </arguments>
@@ -62,7 +61,7 @@
                     <transformers>
                         <transformer
                             implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>JavalinApp</mainClass> <!-- Here you should put the main class of your application -->
+                            <mainClass>com.app.JavalinApp</mainClass> <!-- Here you should put the main class of your application -->
                         </transformer>
                     </transformers>
                     <filters>
