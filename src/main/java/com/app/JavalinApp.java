@@ -1,3 +1,4 @@
+package com.app;
 import io.javalin.Javalin;
 
 public class JavalinApp {
