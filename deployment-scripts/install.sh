@@ -1,7 +1,7 @@
 #!/bin/bash
 # create group and user to run the app with
-groupadd javalin-group
-adduser --ingroup javalin-group javalin-user
+groupadd javalin-app-group
+adduser --ingroup javalin-app-group javalin-app-user
 
 # create a systemd file to be able to manage the app
 # and configure environment variables for it

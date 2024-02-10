@@ -1,0 +1,16 @@
+[Unit]
+Description=Javalin-App
+After=network.target
+
+[Service]
+User=javalin-app-user
+Group=javalin-app-group
+WorkingDirectory=/opt/javalin-app
+ExecStart=/usr/bin/java -jar /opt/javalin-app/app.jar com.app.JavalinApp
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
