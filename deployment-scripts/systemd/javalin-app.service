@@ -6,13 +6,21 @@ After=network.target
 User=javalin-app-user
 Group=javalin-app-group
 WorkingDirectory=/opt/javalin-app
-ExecStart=/usr/bin/java -jar /opt/javalin-app/app.jar com.app.JavalinApp
+ExecStart=/usr/bin/java -javaagent:/opt/javalin-app/dd-java-agent.jar -jar /opt/javalin-app/app.jar com.app.JavalinApp
 SuccessExitStatus=143
 TimeoutStopSec=10
 Restart=always
 RestartSec=10
 
 Environment="PORT=replace_port_value"
+
+Environment="DD_SERVICE=javalin-app"
+Environment="DD_VERSION=0.0.1"
+Environment="DD_ENV=production"
+Environment="DD_LOGS_INJECTION=true"
+Environment="DD_PROFILING_ENABLED=true"
+Environment="XX:FlightRecorderOptions=stackdepth=256"
+
 
 [Install]
 WantedBy=multi-user.target
