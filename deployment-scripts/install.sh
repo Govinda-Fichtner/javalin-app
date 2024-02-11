@@ -16,8 +16,8 @@ if ! [[ $number_of_app_instances =~ ^[1-10]+$ ]]; then
 fi
 
 # create group and user to run the app with
-groupadd javalin-app-group
-adduser --ingroup javalin-app-group javalin-app-user
+groupadd -r javalin-app-group
+adduser --ingroup javalin-app-group --disabled-password --gecos "" javalin-app-user
 
 # create a systemd file to be able to manage the app
 # and configure environment variables for it
@@ -29,7 +29,6 @@ for (( i=1; i<=$number_of_app_instances; i++ )); do
     cp ./systemd/javalin-app.service /etc/systemd/system/javalin-app-$i.service
     sed -i "s/Description=Javalin-App/Description=Javalin-App-$i/" /etc/systemd/system/javalin-app-$i.service
     sed -i "s/replace_port_value/700$((i-1))/" /etc/systemd/system/javalin-app-$i.service
-    
     
     systemctl enable javalin-app-$i
     systemctl start javalin-app-$i
