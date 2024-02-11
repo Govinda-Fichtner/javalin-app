@@ -10,7 +10,7 @@ fi
 number_of_app_instances=$1
 
 # Check if the argument is a valid number
-if ! [[ $number_of_app_instances =~ ^[1-10]+$ ]]; then
+if ! [[ $number_of_app_instances =~ ^[0-9]+$ ]]; then
     echo "Error: '$number_of_app_instances' is not a valid number."
     exit 1
 fi
