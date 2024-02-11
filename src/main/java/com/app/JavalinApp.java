@@ -19,7 +19,7 @@ public class JavalinApp {
       }
 
       // Set up Javalin server
-      Javalin app = Javalin.create(/*config*/).start(port);
+      Javalin app = Javalin.create().start("127.0.0.1", port);
 
       // Define your routes and configure your application as needed
       app.get("/", ctx -> ctx.result("Hello, World!"));
