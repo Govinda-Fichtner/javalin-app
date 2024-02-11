@@ -19,6 +19,9 @@ Environment="DD_VERSION=0.0.1"
 Environment="DD_ENV=production"
 Environment="DD_LOGS_INJECTION=true"
 Environment="DD_PROFILING_ENABLED=true"
+Environment="DD_GIT_COMMIT_SHA=8b7007aa26fec357edab0a9df358a8d364e83df9"
+Environment="DD_GIT_REPOSITORY_URL=github.com/Govinda-Fichtner/javalin-app"
+
 Environment="XX:FlightRecorderOptions=stackdepth=256"
 
 
