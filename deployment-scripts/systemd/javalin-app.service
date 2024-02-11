@@ -12,5 +12,7 @@ TimeoutStopSec=10
 Restart=always
 RestartSec=10
 
+Environment="PORT=replace_port_value"
+
 [Install]
 WantedBy=multi-user.target
